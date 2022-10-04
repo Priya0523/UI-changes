@@ -1,0 +1,32 @@
+<app-nav-bar></app-nav-bar>
+<div class="mt-3 container">
+    <h2>Company List</h2>
+    <hr />
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Company Code</th>
+                <th>Company Name</th>
+                <th>Company CEO Name</th>
+                <th>Company Turnover</th>
+                <th>Company Website</th>
+                <th>Company Stock Exchange</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let data of companylist'>
+                <td>{{data.companyCode}}</td>
+                <td>{{data.companyName}}</td>
+                <td>{{data.companyCeo}}</td>
+                <td>{{data.companyTurnover}}</td>
+                <td>{{data.companyWebsite}}</td>
+                <td>{{data.companyStockExchange}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table" *ngIf="companylist.length >= 0">
+        <tbody>
+            <label *ngIf="(companylist === null || companylist.length === 0 )">{{ companylistEmptymessage }}</label>
+        </tbody>
+    </table>
+</div>

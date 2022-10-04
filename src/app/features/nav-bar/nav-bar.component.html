@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <form class="container-fluid justify-content-start">
+    <div class="container-fluid">
+        <a (click)="redirectToHomePage()">
+            <img
+            class="logo"
+            alt="E-Stock Market Logo"
+            src="./assets/images/e-stock-logo.jpg"
+            />
+        </a>
+      </div>
+    <div style="margin-right: 2cm;">
+    <button (click)='redirectTolistOfCompany()' class="btn mr-md-2 mb-md-0 mb-2 btn-outline-primary btn-lg nav-btn">List of Companies</button>
+</div>
+    
+    <div style="margin-right: 2cm;">
+        <button (click)="redirectToregisterNewCompany()" id="bt" class="btn mr-md-2 mb-md-0 mb-2 btn-outline-primary btn-lg nav-btn">Register Company</button>
+    </div>       
+        <div style="margin-right: 2cm;">
+            <button (click)="redirectToSearch()" id="bt" class="btn mr-md-2 mb-md-0 mb-2 btn-outline-primary btn-lg nav-btn">Search</button>
+        </div>
+        <div style="margin-right: 2cm;">
+            <button (click)="logout()" id="bt" class="btn mr-md-2 mb-md-0 mb-2 btn-outline-primary btn-lg nav-btn">Logout</button>
+        </div>
+        </form>
+  </nav>
+  <br>
