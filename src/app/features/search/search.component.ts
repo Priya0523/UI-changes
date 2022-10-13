@@ -14,6 +14,8 @@ export class SearchComponent implements OnInit {
   public minStockPrice : any;
   public maxStockPrice : any;
   public avgStockPrice : any;
+  public stockListEmptyMessage = " The values is empty";
+  public showStockDetails = false;
 
   constructor(private stockService: StockHttpService,
     private readonly form: FormBuilder) { }
@@ -36,7 +38,7 @@ export class SearchComponent implements OnInit {
     
     this.stockService.getListofCompany().subscribe({
       next: (companyList: any) => {        
-        this.companyList = companyList.companyDetailsList ? companyList.companyDetailsList : [];
+        this.companyList = companyList.companyList ? companyList.companyList : [];
         console.log("data:",this.companyList);
       },
       error: (error) => {
@@ -51,10 +53,11 @@ export class SearchComponent implements OnInit {
     this.stockService.searchByCompanyCodeAndDate(this.searchForm.controls.companyCode.value + '/',
       this.searchForm.controls.startDate.value + '/',this.searchForm.controls.endDate.value).subscribe({
       next: (stockDetails: any) => {
-        this.stockDetails = stockDetails ? stockDetails : [];
+        this.stockDetails = stockDetails.stockPriceList ? stockDetails.stockPriceList : [];
         this.minStockPrice = stockDetails.min;
         this.maxStockPrice = stockDetails.max;
         this.avgStockPrice = stockDetails.average;
+        this.showStockDetails = true;
       },
       error: (error) => {
         this.companyList = [];

@@ -37,7 +37,7 @@ export class StockHttpService {
   }
 
   searchByCompanyCodeAndDate(companyCode : any, startDate : any, endDate : any){
-    return this.http.post(STOCK_SERVICE_URL.GET_STOCK_ON_DATES+companyCode+startDate+endDate
+    return this.http.get(STOCK_SERVICE_URL.GET_STOCK_ON_DATES+companyCode+startDate+endDate
       , {...this.headerOptions})
   }
 
@@ -48,4 +48,10 @@ export class StockHttpService {
   loginUser(payload :any){
     this.http.post(USER_URL.LOGIN, payload, {...this.headerOptions});
   }
+
+  deleteCompany(companyCode : any){
+    return this.http.post(COMPANY_SERVICE_URL.REGISTER_COMAPNIES+companyCode, {...this.headerOptions})
+  }
+
+
 }

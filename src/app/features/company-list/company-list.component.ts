@@ -24,12 +24,11 @@ export class CompanyListComponent implements OnInit {
       this.stockService.getListofCompany().subscribe({
         next: (companyList : any) => {
           console.log("response:",companyList.companyDetailsList);          
-          this.companylist = companyList.companyDetailsList ? companyList.companyDetailsList : [];
+          this.companylist = companyList.companyList ? companyList.companyList : [];
         },
         error: (error) => {
           this.companylist = [];
         }
       })
   }
-
 }

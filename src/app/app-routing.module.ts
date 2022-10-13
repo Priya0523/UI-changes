@@ -5,7 +5,7 @@ import { CompanyListComponent } from './features/company-list/company-list.compo
 import { HomeComponent } from './features/home/home.component';
 import { LoginComponent } from './features/login/login.component';
 import { SearchComponent } from './features/search/search.component';
-import { AuthGuard } from './shared/guards/auth-guard';
+// import { AuthGuard } from './shared/guards/auth-guard';
 
 const routes: Routes = [  
   { path:"", component:LoginComponent},

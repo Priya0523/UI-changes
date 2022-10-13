@@ -19,8 +19,6 @@ export class AddorRegisterCompanyComponent implements OnInit {
   ngOnInit(): void {
     this.companyStockExchangeList.push("NSE");
     this.companyStockExchangeList.push("BSE");
-
-    this.registerCompany();
   }
 
   registerForm = this.form.group({
